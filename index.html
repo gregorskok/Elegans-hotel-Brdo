@@ -1,2 +1,1300 @@
-[InternetShortcut]
-URL=file:///C:/Users/Gregor/Desktop/Claude/Elegans/Hotel_Elegans_Tehnicni_sestanek.html
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nevron x Elegans Hotel Brdo — Točke razprave</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray-s1: #080C13;
+  --gray-s2: #353941;
+  --gray-s3: #707379;
+  --gray-s4: #B4B6B9;
+  --gray-s5: #E0E1E2;
+  --blue-m1: #000126;
+  --blue-m2: #002391;
+  --blue-m3: #1B92FF;
+  --blue-m4: #73C7FF;
+  --blue-m5: #C3E9FF;
+  --yellow: #F6A900;
+  --green: #36A068;
+  --red: #DA2025;
+  --orange: #E56600;
+}
+
+html {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  min-height: 100vh;
+}
+
+/* ─── Header ─── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-logo svg { height: 22px; width: auto; }
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.header-meta span {
+  font-size: 13px;
+  color: var(--gray-s3);
+  font-weight: 500;
+}
+
+.header-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--blue-m3);
+  z-index: 200;
+  transition: width 0.3s ease;
+  width: 0%;
+}
+
+/* ─── Hero ─── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 48px 80px;
+  position: relative;
+}
+
+.hero-logo svg { height: 44px; margin-bottom: 48px; }
+
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--blue-m3);
+  margin: 0 auto 40px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--gray-s4);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.hero .date {
+  font-size: 15px;
+  color: var(--gray-s3);
+  margin-top: 32px;
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: float 2s ease-in-out infinite;
+}
+
+.scroll-hint span {
+  font-size: 11px;
+  color: var(--gray-s2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.scroll-hint svg { opacity: 0.3; }
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ─── Timeline Container ─── */
+.timeline-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 48px 120px;
+  position: relative;
+}
+
+.timeline-section-header {
+  padding: 100px 0 64px;
+  text-align: center;
+}
+
+.timeline-section-header .label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue-m3);
+  margin-bottom: 16px;
+}
+
+.timeline-section-header h2 {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.highlight { color: var(--blue-m3); }
+.highlight-green { color: var(--green); }
+.highlight-yellow { color: var(--yellow); }
+
+.timeline-section-header p {
+  font-size: 18px;
+  color: var(--gray-s4);
+  line-height: 1.5;
+}
+
+/* ─── Vertical Timeline ─── */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+/* The vertical line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--gray-s2) 5%,
+    var(--gray-s2) 95%,
+    transparent 100%
+  );
+}
+
+/* ─── Timeline Item ─── */
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* The dot on the line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 28px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--gray-s2);
+  border: 2px solid var(--black);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.timeline-item.expanded::before {
+  background: var(--blue-m3);
+  box-shadow: 0 0 12px rgba(27,146,255,0.4);
+}
+
+.timeline-item[data-color="green"].expanded::before {
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(54,160,104,0.4);
+}
+
+.timeline-item[data-color="yellow"].expanded::before {
+  background: var(--yellow);
+  box-shadow: 0 0 12px rgba(246,169,0,0.4);
+}
+
+/* Clickable header */
+.timeline-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 28px;
+  background: var(--gray-s1);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.timeline-header:hover {
+  background: #0D1219;
+  border-color: rgba(255,255,255,0.1);
+}
+
+.timeline-item.expanded .timeline-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom-color: transparent;
+}
+
+.timeline-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--blue-m3);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 48px;
+}
+
+.timeline-item[data-color="green"] .timeline-number { color: var(--green); }
+.timeline-item[data-color="yellow"] .timeline-number { color: var(--yellow); }
+
+.timeline-header-text {
+  flex: 1;
+}
+
+.timeline-header-text .phase-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-m3);
+  margin-bottom: 6px;
+}
+
+.timeline-item[data-color="green"] .phase-label { color: var(--green); }
+.timeline-item[data-color="yellow"] .phase-label { color: var(--yellow); }
+
+.timeline-header-text h3 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.timeline-header-text .summary {
+  font-size: 14px;
+  color: var(--gray-s3);
+  line-height: 1.5;
+}
+
+/* Expand/collapse indicator */
+.expand-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+  transition: all 0.3s ease;
+  margin-top: 4px;
+}
+
+.expand-icon svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.3s ease;
+}
+
+.expand-icon svg path {
+  stroke: var(--gray-s3);
+  transition: stroke 0.3s ease;
+}
+
+.timeline-item.expanded .expand-icon {
+  background: rgba(27,146,255,0.1);
+}
+
+.timeline-item.expanded .expand-icon svg {
+  transform: rotate(180deg);
+}
+
+.timeline-item.expanded .expand-icon svg path {
+  stroke: var(--blue-m3);
+}
+
+/* Expandable content */
+.timeline-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-item.expanded .timeline-content {
+  max-height: 4000px;
+}
+
+.timeline-content-inner {
+  padding: 28px 28px 32px;
+  background: var(--gray-s1);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* Content cards — sub-timeline */
+.detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  padding-left: 28px;
+}
+
+/* Vertical line for sub-timeline */
+.detail-grid::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.1) 10%, rgba(255,255,255,0.1) 90%, transparent 100%);
+}
+
+.detail-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 14px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.detail-card:last-child {
+  border-bottom: none;
+}
+
+/* Sub-timeline dot */
+.detail-card::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 20px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gray-s2);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.detail-card.card-expanded::before {
+  background: var(--blue-m3);
+  box-shadow: 0 0 8px rgba(27,146,255,0.3);
+}
+
+.timeline-item[data-color="green"] .detail-card.card-expanded::before {
+  background: var(--green);
+  box-shadow: 0 0 8px rgba(54,160,104,0.3);
+}
+
+.timeline-item[data-color="yellow"] .detail-card.card-expanded::before {
+  background: var(--yellow);
+  box-shadow: 0 0 8px rgba(246,169,0,0.3);
+}
+
+.detail-card:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+.detail-card .card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), margin-top 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+  opacity: 0;
+  margin-top: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.detail-card.card-expanded .card-body {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 14px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.detail-card h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-card h4 .card-toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.04);
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+
+.detail-card h4 .card-toggle svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.3s ease;
+}
+
+.detail-card h4 .card-toggle svg path {
+  stroke: var(--gray-s3);
+}
+
+.detail-card.card-expanded h4 .card-toggle svg {
+  transform: rotate(180deg);
+}
+
+.detail-card.card-expanded h4 .card-toggle {
+  background: rgba(27,146,255,0.1);
+}
+
+.detail-card.card-expanded h4 .card-toggle svg path {
+  stroke: var(--blue-m3);
+}
+
+.timeline-item[data-color="green"] .detail-card.card-expanded h4 .card-toggle {
+  background: rgba(54,160,104,0.1);
+}
+.timeline-item[data-color="green"] .detail-card.card-expanded h4 .card-toggle svg path {
+  stroke: var(--green);
+}
+.timeline-item[data-color="yellow"] .detail-card.card-expanded h4 .card-toggle {
+  background: rgba(246,169,0,0.1);
+}
+.timeline-item[data-color="yellow"] .detail-card.card-expanded h4 .card-toggle svg path {
+  stroke: var(--yellow);
+}
+
+.detail-card > h4 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.detail-card:hover > h4 {
+  opacity: 0.8;
+}
+
+.detail-card.card-expanded > h4 {
+  font-weight: 600;
+  opacity: 1;
+}
+
+.detail-card p, .detail-card li {
+  font-size: 13px;
+  color: var(--gray-s4);
+  line-height: 1.6;
+}
+
+.detail-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detail-card ul li {
+  padding: 3px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.detail-card ul li::before {
+  content: '→';
+  color: var(--blue-m3);
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.timeline-item[data-color="green"] .detail-card ul li::before { color: var(--green); }
+.timeline-item[data-color="yellow"] .detail-card ul li::before { color: var(--yellow); }
+
+/* Stat callouts inside content */
+.stat-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-box {
+  background: rgba(27,146,255,0.06);
+  border: 1px solid rgba(27,146,255,0.12);
+  border-radius: 10px;
+  padding: 16px 20px;
+  flex: 1;
+  text-align: center;
+}
+
+.stat-box .val {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue-m3);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-box .lbl {
+  font-size: 12px;
+  color: var(--gray-s3);
+}
+
+/* Info callout */
+.info-callout {
+  background: rgba(27, 146, 255, 0.06);
+  border: 1px solid rgba(27, 146, 255, 0.15);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+
+.info-callout p {
+  font-size: 13px;
+  color: var(--gray-s4);
+  line-height: 1.6;
+}
+
+.info-callout.green {
+  background: rgba(54, 160, 104, 0.06);
+  border-color: rgba(54, 160, 104, 0.15);
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 4px 0;
+  font-size: 13px;
+  color: var(--gray-s4);
+}
+
+.check-item::before {
+  content: '✓';
+  color: var(--green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ─── Action Items Block ─── */
+.action-block {
+  margin-top: 24px;
+  border: 1px solid rgba(246, 169, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.action-block-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: rgba(246, 169, 0, 0.08);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.action-block-header:hover {
+  background: rgba(246, 169, 0, 0.12);
+}
+
+.action-block-header .action-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.action-block-header span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  flex: 1;
+}
+
+.action-block-header .action-toggle {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(246, 169, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.action-block-header .action-toggle svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.3s ease;
+}
+
+.action-block-header .action-toggle svg path {
+  stroke: var(--yellow);
+}
+
+.action-block.action-expanded .action-block-header {
+  border-bottom: 1px solid rgba(246, 169, 0, 0.12);
+}
+
+.action-block.action-expanded .action-toggle svg {
+  transform: rotate(180deg);
+}
+
+.action-block-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+  padding: 0 20px;
+  background: rgba(246, 169, 0, 0.03);
+}
+
+.action-block.action-expanded .action-block-body {
+  max-height: 600px;
+  padding: 16px 20px;
+}
+
+.action-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--gray-s4);
+  line-height: 1.55;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.action-item:last-child {
+  border-bottom: none;
+}
+
+.action-tag {
+  flex-shrink: 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-top: 1px;
+  white-space: nowrap;
+}
+
+.action-tag.hotel {
+  background: rgba(27, 146, 255, 0.12);
+  color: var(--blue-m3);
+}
+
+.action-tag.nevron {
+  background: rgba(54, 160, 104, 0.12);
+  color: var(--green);
+}
+
+.action-tag.ugotoviti {
+  background: rgba(246, 169, 0, 0.12);
+  color: var(--yellow);
+}
+
+.action-tag.skupaj {
+  background: rgba(180, 182, 185, 0.12);
+  color: var(--gray-s4);
+}
+
+/* Separator between sections */
+.section-break {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gray-s2), transparent);
+  margin: 60px 0;
+}
+
+/* ─── Footer ─── */
+.footer {
+  text-align: center;
+  padding: 120px 48px 80px;
+}
+
+.footer-logo svg { height: 32px; margin-bottom: 32px; }
+
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--blue-m3);
+  margin: 0 auto 32px;
+}
+
+.footer h2 {
+  font-size: 40px;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+.footer p {
+  font-size: 16px;
+  color: var(--gray-s3);
+  margin-bottom: 6px;
+}
+</style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="header-progress" id="progressBar"></div>
+
+<!-- Fixed header -->
+<div class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 960 276.9" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#FFFFFF">
+        <path d="M244.3,93.9h30.5V2.1H183v30.5h61.3V93.9z M30.5,185.1H0v91.8h91.8v-30.5H30.5V185.1z M274.8,185.1h-30.5V233L30.5,2.1H0v91.8h30.5V45.7l213.7,231.1h30.5L274.8,185.1z"/>
+        <path d="M467.4,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7h25.4V35.4C498.3,10.9,485.5,0,467.4,0z M557.3,0c-26.7,0-47.2,18.8-47.2,47.7v1.4c0,29.3,20.2,46.7,47.9,46.7c25.1,0,40.9-11.1,43.9-30.9h-24c-1.6,7.7-7.4,12.8-19.1,12.8c-13.9,0-22.1-8.8-22.8-24h66.2v-7C602.1,13.9,581,0,557.3,0z M536.3,38.1c1.9-13,9.7-20.5,21.1-20.5c12.1,0,19.1,6.7,20,20.5H536.3z M813.3,0c-27.5,0-48.4,18.8-48.4,47.6V49c0,28.6,20.9,46.8,48.3,46.8c27.5,0,48.4-18.4,48.4-47.4V47C861.5,18.4,840.8,0,813.3,0z M835.7,48.6c0,17.4-8.2,27.9-22.5,27.9c-14.4,0-22.5-10.5-22.5-28.1V47c0-17.5,8.4-27.7,22.5-27.7c14.2,0,22.5,10.5,22.5,28.1V48.6z M929.1,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7H960V35.4C960,10.9,947.2,0,929.1,0z M730.6,19.7V2.1h-25.4v91.8h25.4v-46c0-17.5,10.9-23.7,29.7-23.5V0.7C745.4,0.9,736.4,7.4,730.6,19.7z M650.9,67.7L629,2.1h-27.2l33.5,91.8h28.6l33.3-91.8h-24.6L650.9,67.7z"/>
+      </g>
+    </svg>
+  </div>
+  <div class="header-meta">
+    <span>NevronCore tehni&#269;ni sestanek</span>
+    <span style="color: var(--gray-s2);">|</span>
+    <span>Hotel Elegans Brdo</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-logo">
+    <svg viewBox="0 0 960 276.9" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#FFFFFF">
+        <path d="M244.3,93.9h30.5V2.1H183v30.5h61.3V93.9z M30.5,185.1H0v91.8h91.8v-30.5H30.5V185.1z M274.8,185.1h-30.5V233L30.5,2.1H0v91.8h30.5V45.7l213.7,231.1h30.5L274.8,185.1z"/>
+        <path d="M467.4,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7h25.4V35.4C498.3,10.9,485.5,0,467.4,0z M557.3,0c-26.7,0-47.2,18.8-47.2,47.7v1.4c0,29.3,20.2,46.7,47.9,46.7c25.1,0,40.9-11.1,43.9-30.9h-24c-1.6,7.7-7.4,12.8-19.1,12.8c-13.9,0-22.1-8.8-22.8-24h66.2v-7C602.1,13.9,581,0,557.3,0z M536.3,38.1c1.9-13,9.7-20.5,21.1-20.5c12.1,0,19.1,6.7,20,20.5H536.3z M813.3,0c-27.5,0-48.4,18.8-48.4,47.6V49c0,28.6,20.9,46.8,48.3,46.8c27.5,0,48.4-18.4,48.4-47.4V47C861.5,18.4,840.8,0,813.3,0z M835.7,48.6c0,17.4-8.2,27.9-22.5,27.9c-14.4,0-22.5-10.5-22.5-28.1V47c0-17.5,8.4-27.7,22.5-27.7c14.2,0,22.5,10.5,22.5,28.1V48.6z M929.1,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7H960V35.4C960,10.9,947.2,0,929.1,0z M730.6,19.7V2.1h-25.4v91.8h25.4v-46c0-17.5,10.9-23.7,29.7-23.5V0.7C745.4,0.9,736.4,7.4,730.6,19.7z M650.9,67.7L629,2.1h-27.2l33.5,91.8h28.6l33.3-91.8h-24.6L650.9,67.7z"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-divider"></div>
+  <h1>NevronCore tehni&#269;ni <span class="highlight">sestanek</span></h1>
+  <p style="font-size: 18px;">Hotel Elegans Brdo &middot; Slovenija</p>
+  <p class="date">Marec 2026</p>
+
+  <div class="scroll-hint">
+    <span>Pomikajte se navzdol</span>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+</section>
+
+<!-- Discussion Points Timeline -->
+<div class="timeline-section">
+
+  <div class="timeline-section-header">
+    <div class="label">Cilji sestanka</div>
+    <h2>To&#269;ke <span class="highlight">razprave.</span></h2>
+    <p>Kliknite na temo in nato na posamezno podto&#269;ko za podrobnosti</p>
+  </div>
+
+  <div class="timeline">
+
+    <!-- 1. Tehni&#269;ne zahteve -->
+    <div class="timeline-item" data-color="blue">
+      <div class="timeline-header" onclick="toggleItem(this)">
+        <div class="timeline-number">01</div>
+        <div class="timeline-header-text">
+          <div class="phase-label">Infrastruktura</div>
+          <h3>Tehni&#269;ne zahteve</h3>
+          <div class="summary">Pregled infrastrukture, zahteve za mobilno aplikacijo in IPTV</div>
+        </div>
+        <div class="expand-icon">
+          <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-content-inner">
+          <div class="detail-grid">
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--blue-m3);"><span>Trenutna infrastruktura hotela</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Omre&#382;je in Wi-Fi pokritost — kak&#353;na je pokritost, kateri prostori, kje so lahko digital touchpoints + floorplan</li>
+                <li>Pasovna &#353;irina — koliko je namenjene za goste?</li>
+                <li>Stre&#382;ni&#353;ka infrastruktura (+ tehnolo&#353;ki stack)</li>
+                <li>Koliko UTP priklju&#269;kov je v sobi?</li>
+                <li>Kako delujejo TV z elektriko — ali imajo svoj UTP? Se same vklopijo?</li>
+                <li>Ali je lokalna instalacija?</li>
+                <li>Ali je TV povezan s PMS?</li>
+                <li>Katere TV modele imate?</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4><span>Obstoje&#269;i sistemi</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Clock PMS</li>
+                <li>POS Elektron&#269;ek</li>
+                <li>Assa Abloy Visionline v1.26.1.3 (LCU 6334)</li>
+                <li>Channel manager?</li>
+                <li>Kaj je med seboj &#382;e integrirano?</li>
+                <li>Sistem za zbiranje povratnih informacij gostov?</li>
+                <li>Drugo?</li>
+              </ul>
+              </div>
+            </div>
+          </div>
+          <div class="action-block">
+            <div class="action-block-header" onclick="toggleAction(this)">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Priporo&#269;ila</span>
+              <span class="action-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="action-block-body">
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati dokumentacijo omre&#382;ne infrastrukture (topologija, oprema, pasovna &#353;irina)</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Preveriti in potrditi Wi-Fi pokritost v vseh delih hotela (sobe, hodniki, wellness, kongres)</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati specifikacije TV sprejemnikov v sobah (model, omre&#382;na povezljivost)</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Pripraviti seznam vseh sistemov in tehnologij, ki so trenutno v uporabi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Obseg operacije -->
+    <div class="timeline-item" data-color="green">
+      <div class="timeline-header" onclick="toggleItem(this)">
+        <div class="timeline-number">02</div>
+        <div class="timeline-header-text">
+          <div class="phase-label">Operacija</div>
+          <h3>Obseg trenutnega delovanja hotela</h3>
+          <div class="summary">Sobe, le&#382;i&#353;&#269;a, gosti, dnevni obiskovalci, wellness, kongresi</div>
+        </div>
+        <div class="expand-icon">
+          <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-content-inner">
+          <div class="detail-grid">
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--green);"><span>Nastanitvene kapacitete</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>&#352;tevilo sob</li>
+                <li>&#352;tevilo le&#382;i&#353;&#269;</li>
+                <li>Tipi sob (enoposteljne, dvoposteljne, suite...)</li>
+                <li>Povpre&#269;na zasedenost po mesecih</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--green);"><span>Gostje</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Hotelski gosti — profil in segmenti</li>
+                <li>Dnevni gosti in zunanji obiskovalci</li>
+                <li>Razmerje tipa obiskov: poslovno / prosti &#269;as / protokol?</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--green);"><span>Naro&#269;ila in rezervacije</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Obseg ponudbe za goste?</li>
+                <li>Zunanji obiskovalci — tudi mo&#382;nost naro&#269;anja storitev? &#268;e ja, katerih?</li>
+                <li>Trenutni sistem rezervacij storitev?</li>
+                <li>Povezava s pla&#269;ilnim sistemom?</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--green);"><span>Kongresna dejavnost</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Kongresne dvorane in kapacitete</li>
+                <li>Pogostost dogodkov</li>
+                <li>Upravljanje skupinskih rezervacij</li>
+                <li>Posebne zahteve za kongresne goste</li>
+              </ul>
+              </div>
+            </div>
+          </div>
+          <div class="action-block">
+            <div class="action-block-header" onclick="toggleAction(this)">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Priporo&#269;ila</span>
+              <span class="action-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="action-block-body">
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati to&#269;ne podatke o kapacitetah: &#353;tevilo sob, le&#382;i&#353;&#269;, tipi sob</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati podatke o povpre&#269;ni zasedenosti po mesecih (zadnje leto)</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Opisati strukturo gostov: dele&#382; poslovnih vs. prosto&#269;asnih, mednarodnih vs. doma&#269;ih</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati obseg wellness ponudbe in opis trenutnega sistema rezervacij tretmajev</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati podatke o kongresnih dvoranah (kapacitete, oprema, pogostost dogodkov)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Integracija s Clock -->
+    <div class="timeline-item" data-color="blue">
+      <div class="timeline-header" onclick="toggleItem(this)">
+        <div class="timeline-number">03</div>
+        <div class="timeline-header-text">
+          <div class="phase-label">Integracija</div>
+          <h3>Integracija s Clock</h3>
+          <div class="summary">PMS kot osnova, nato POS, Channel Manager in ostale tehnologije</div>
+        </div>
+        <div class="expand-icon">
+          <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-content-inner">
+          <div class="detail-grid">
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--blue-m3);"><span>1. Clock PMS <span style="font-size: 11px; background: var(--blue-m3); color: var(--black); padding: 2px 8px; border-radius: 4px; margin-left: 6px;">INTEGRACIJA</span></span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Kateri podatki se izmenjavajo?</li>
+                <li>Kaj si &#382;elite, da se izmenjava?</li>
+                <li>Trenutne te&#382;ave?</li>
+                <li>Ali Clock sam po&#353;ilja obvezne podatke dr&#382;avnim institucijam?</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--yellow);"><span>2. Katere druge tehnologije imate v hotelu?</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <p style="font-size: 13px; color: var(--gray-s4); line-height: 1.6; margin-top: 4px;">Prosimo, da navedete vse sisteme in tehnologije, s katerimi bi se potencialno lahko integrirali — npr. CRM, loyalty program, upravljanje energije, pametne sobe, digitalna signalizacija, digital signage, IPTV, revenue management, itd.</p>
+              </div>
+            </div>
+          </div>
+          <div class="action-block">
+            <div class="action-block-header" onclick="toggleAction(this)">
+              <svg class="action-icon" viewBox="0 0 24 24" fill="none"><path d="M9 11l3 3L22 4" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Priporo&#269;ila</span>
+              <span class="action-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+            <div class="action-block-body">
+              <div class="action-item"><span class="action-tag nevron">Nevron</span>Vzpostaviti kontakt s Clock za pridobitev API dostopa in dokumentacije<span style="margin-left: auto; color: var(--green); font-weight: 700; flex-shrink: 0; padding-left: 10px;">&#10003;</span></div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Posredovati podatke o Channel Managerju v uporabi (ime, verzija)</div>
+              <div class="action-item"><span class="action-tag hotel">Elegans</span>Pripraviti celoten seznam tehnologij in sistemov v hotelu (CRM, loyalty, energija, signalizacija...)</div>
+              <div class="action-item"><span class="action-tag skupaj">Skupaj</span>Dolo&#269;iti prioritetni vrstni red integracij: najprej Clock PMS, nato ostalo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Digitalni Check-in -->
+    <div class="timeline-item" data-color="blue">
+      <div class="timeline-header" onclick="toggleItem(this)">
+        <div class="timeline-number">04</div>
+        <div class="timeline-header-text">
+          <div class="phase-label">Check-in</div>
+          <h3>Digitalni Check-in</h3>
+          <div class="summary">Kako si ga predstavljate, guest flow in pokritost celotnega hotela</div>
+        </div>
+        <div class="expand-icon">
+          <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-content-inner">
+          <div class="detail-grid">
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--blue-m3);"><span>Trenutno stanje in &#382;elje</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>&#268;asovnica: pred prihodom, ob prihodu ali kombinacija obojega?</li>
+                <li>Na kak&#353;en na&#269;in se preverja identiteta gosta?</li>
+                <li>Dodeljevanje sob — avtomatsko ali ro&#269;no s strani recepcije?</li>
+                <li>E-mail template mora vsebovati povezavo na digitalni check-in</li>
+                <li>Kak&#353;na je vloga recepcije po opravljenem digitalnem check-inu?</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--blue-m3);"><span>Guest Journey</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Pre-stay komunikacija z gostom (e-po&#353;ta, SMS)</li>
+                <li>Gost izpolni osebne podatke in poda soglasja</li>
+                <li>Potrditev rezervacije in avtomatska dodelitev sobe</li>
+                <li>Gost prejme digitalni klju&#269; (v prvi fazi fizi&#269;ni klju&#269;)</li>
+                <li>Ob prihodu gost vstopi neposredno v sobo</li>
+              </ul>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--blue-m4);"><span>Celoten hotel</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Ali digitalni check-in vklju&#269;uje tudi dnevne goste (wellness, kongres)?</li>
+                <li>Katere jezike bi želeli imeti podprte?</li>
+                <li>QR kode</li>
+              </ul>
+              </div>
+            </div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-box"><div class="val">Clock</div><div class="lbl">PMS integracija</div></div>
+            <div class="stat-box"><div class="val">Fast</div><div class="lbl">Check-in modul</div></div>
+            <div class="stat-box"><div class="val">100%</div><div class="lbl">Digitalno, brez papirja</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Raz&#353;iritev in drugi moduli -->
+    <div class="timeline-item" data-color="yellow">
+      <div class="timeline-header" onclick="toggleItem(this)">
+        <div class="timeline-number">05</div>
+        <div class="timeline-header-text">
+          <div class="phase-label">Raz&#353;iritev</div>
+          <h3>Raz&#353;iritev in drugi moduli</h3>
+          <div class="summary">Katalogi, Room Care, AI Intelligence in nadaljnji moduli</div>
+        </div>
+        <div class="expand-icon">
+          <svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-content-inner">
+          <div class="detail-grid">
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--yellow);"><span>Katalogi</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Katalog ponudbe hotela v aplikaciji</li>
+                <li>Naro&#269;anje storitev in artiklov</li>
+                <li>Predprihodne ponudbe in nadprodaja</li>
+              </ul>
+              <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <p style="font-size: 12px; font-weight: 600; color: var(--yellow); margin-bottom: 6px; letter-spacing: 0.1em; text-transform: uppercase;">Z vaše strani potrebujemo:</p>
+                <ul>
+                  <li>Seznam celotne ponudbe</li>
+                  <li>Za vsak artikel: ime, opis, cena (&#269;e je pla&#269;ljiv)</li>
+                  <li>Mo&#382;nosti naro&#269;anja za vsak artikel</li>
+                  <li>Vsaj 1 slika na artikel</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--yellow);"><span>Room Care</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>Storitve vzdr&#382;evanja in oskrbe sob</li>
+                <li>Zahteve gostov za sobne storitve</li>
+                <li>Upravljanje in sledenje zahtev</li>
+              </ul>
+              <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <p style="font-size: 12px; font-weight: 600; color: var(--yellow); margin-bottom: 6px; letter-spacing: 0.1em; text-transform: uppercase;">Z vaše strani potrebujemo:</p>
+                <ul>
+                  <li>Iz seznama Room Care ponudbe ozna&#269;iti, kaj je relevantno za va&#353; hotel</li>
+                  <li>Katere stvari so brezpla&#269;ne</li>
+                  <li>Katere stvari so pla&#269;ljive (tudi cene)</li>
+                </ul>
+              </div>
+              </div>
+            </div>
+            <div class="detail-card" onclick="toggleCard(this)">
+              <h4 style="color: var(--blue-m3);"><span>Nevron AI Intelligence</span><span class="card-toggle"><svg viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></h4>
+              <div class="card-body">
+              <ul>
+                <li>AI Intelligence kontekst (spletna stran, podatkovne baze, ponudba, dokumenti...)</li>
+                <li>AI Chat zgrajen na kontekstu</li>
+                <li>Implementacija na spletno stran</li>
+              </ul>
+              <div style="margin-top: 16px; padding: 24px 28px 28px; background: linear-gradient(135deg, rgba(246,169,0,0.10) 0%, rgba(246,169,0,0.04) 100%); border: 1px solid rgba(246,169,0,0.25); border-radius: 12px; overflow: visible;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+                  <svg viewBox="0 0 24 24" fill="none" style="width: 18px; height: 18px; flex-shrink: 0;"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#F6A900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span style="font-size: 12px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--yellow);">Pred uvedbo AI Intelligence</span>
+                </div>
+                <p style="font-size: 14px; color: var(--gray-s4); line-height: 1.6; margin-bottom: 18px;">Preden se uvede AI, morajo biti hotelske vsebine to&#269;ne, strukturirane in konsistentne. To je temelj za AI iskanje, rezervacije in komunikacijo z gosti.</p>
+                <div style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 4px;">
+                  <p style="font-size: 13px; color: var(--gray-s4); line-height: 1.5; margin: 0;"><span style="color: var(--yellow); margin-right: 8px;">&#8594;</span>Pregled vseh vsebin za goste &#8212; spletna stran, Google Business profil, OTA platforme, dru&#382;bena omre&#382;ja</p>
+                  <p style="font-size: 13px; color: var(--gray-s4); line-height: 1.5; margin: 0;"><span style="color: var(--yellow); margin-right: 8px;">&#8594;</span>Priprava enotnega dokumenta z vsemi podatki (sobe, storitve, cene, politike, dostopnost)</p>
+                  <p style="font-size: 13px; color: var(--gray-s4); line-height: 1.5; margin: 0;"><span style="color: var(--yellow); margin-right: 8px;">&#8594;</span>Priprava odgovorov na 50 najpogostej&#353;ih vpra&#353;anj gostov, usklajenih s politikami in cenami</p>
+                  <p style="font-size: 13px; color: var(--gray-s4); line-height: 1.5; margin: 0;"><span style="color: var(--yellow); margin-right: 8px;">&#8594;</span>Dolo&#269;iti odgovorno osebo in urnik posodabljanja vsebin</p>
+                  <p style="font-size: 13px; color: var(--gray-s4); line-height: 1.5; margin: 0;"><span style="color: var(--yellow); margin-right: 8px;">&#8594;</span>Redno preverjanje &#8212; mese&#269;ni pregled neskladij med kanali in spremljanje, kako AI povzema va&#353; hotel v iskalnih rezultatih</p>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end .timeline -->
+</div><!-- end .timeline-section -->
+
+<!-- FAZA 1: AKCIJE -->
+<section style="max-width: 900px; margin: 0 auto; padding: 80px 48px 120px;">
+  <div style="text-align: center; margin-bottom: 48px;">
+    <div style="display: inline-block; padding: 12px 32px; border: 2px solid var(--blue-m3); border-radius: 8px; margin-bottom: 24px;">
+      <span style="font-size: 14px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-m3);">Faza 1</span>
+    </div>
+    <h2 style="font-size: 48px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.15; color: var(--white);">Akcije</h2>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(27,146,255,0.06); border: 1px solid rgba(27,146,255,0.15); border-radius: 12px;">
+      <span style="font-size: 20px; font-weight: 600; color: var(--blue-m3); min-width: 32px;">01</span>
+      <span style="font-size: 17px; color: var(--white);">Hotelske kapacitete (gosti in obiskovalci)</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(27,146,255,0.06); border: 1px solid rgba(27,146,255,0.15); border-radius: 12px;">
+      <span style="font-size: 20px; font-weight: 600; color: var(--blue-m3); min-width: 32px;">02</span>
+      <span style="font-size: 17px; color: var(--white);">Check-in Guest Journey</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(27,146,255,0.06); border: 1px solid rgba(27,146,255,0.15); border-radius: 12px;">
+      <span style="font-size: 20px; font-weight: 600; color: var(--blue-m3); min-width: 32px;">03</span>
+      <span style="font-size: 17px; color: var(--white);">Jeziki</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(27,146,255,0.06); border: 1px solid rgba(27,146,255,0.15); border-radius: 12px;">
+      <span style="font-size: 20px; font-weight: 600; color: var(--blue-m3); min-width: 32px;">04</span>
+      <span style="font-size: 17px; color: var(--white);">Vsebina za kataloge</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(27,146,255,0.06); border: 1px solid rgba(27,146,255,0.15); border-radius: 12px;">
+      <span style="font-size: 20px; font-weight: 600; color: var(--blue-m3); min-width: 32px;">05</span>
+      <span style="font-size: 17px; color: var(--white);">Room Care artikli</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px; padding: 20px 24px; background: rgba(27,146,255,0.06); border: 1px solid rgba(27,146,255,0.15); border-radius: 12px;">
+      <span style="font-size: 20px; font-weight: 600; color: var(--blue-m3); min-width: 32px;">06</span>
+      <span style="font-size: 17px; color: var(--white);">AI Intelligence kontekst</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<section class="footer">
+  <div class="footer-logo">
+    <svg viewBox="0 0 960 276.9" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#FFFFFF">
+        <path d="M244.3,93.9h30.5V2.1H183v30.5h61.3V93.9z M30.5,185.1H0v91.8h91.8v-30.5H30.5V185.1z M274.8,185.1h-30.5V233L30.5,2.1H0v91.8h30.5V45.7l213.7,231.1h30.5L274.8,185.1z"/>
+        <path d="M467.4,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7h25.4V35.4C498.3,10.9,485.5,0,467.4,0z M557.3,0c-26.7,0-47.2,18.8-47.2,47.7v1.4c0,29.3,20.2,46.7,47.9,46.7c25.1,0,40.9-11.1,43.9-30.9h-24c-1.6,7.7-7.4,12.8-19.1,12.8c-13.9,0-22.1-8.8-22.8-24h66.2v-7C602.1,13.9,581,0,557.3,0z M536.3,38.1c1.9-13,9.7-20.5,21.1-20.5c12.1,0,19.1,6.7,20,20.5H536.3z M813.3,0c-27.5,0-48.4,18.8-48.4,47.6V49c0,28.6,20.9,46.8,48.3,46.8c27.5,0,48.4-18.4,48.4-47.4V47C861.5,18.4,840.8,0,813.3,0z M835.7,48.6c0,17.4-8.2,27.9-22.5,27.9c-14.4,0-22.5-10.5-22.5-28.1V47c0-17.5,8.4-27.7,22.5-27.7c14.2,0,22.5,10.5,22.5,28.1V48.6z M929.1,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7H960V35.4C960,10.9,947.2,0,929.1,0z M730.6,19.7V2.1h-25.4v91.8h25.4v-46c0-17.5,10.9-23.7,29.7-23.5V0.7C745.4,0.9,736.4,7.4,730.6,19.7z M650.9,67.7L629,2.1h-27.2l33.5,91.8h28.6l33.3-91.8h-24.6L650.9,67.7z"/>
+      </g>
+    </svg>
+  </div>
+  <div class="footer-divider"></div>
+  <h2>Hvala.</h2>
+  <p style="font-size: 18px; color: var(--gray-s4); margin-bottom: 40px;">Skupaj ustvarimo izjemno izku&#353;njo za goste Hotela Elegans.</p>
+  <p>www.nevron.eu</p>
+</section>
+
+<script>
+// Toggle action block expand/collapse
+function toggleAction(header) {
+  const block = header.closest('.action-block');
+  block.classList.toggle('action-expanded');
+}
+
+// Toggle card expand/collapse (sub-items)
+function toggleCard(card) {
+  card.classList.toggle('card-expanded');
+}
+
+// Toggle expand/collapse
+function toggleItem(header) {
+  const item = header.closest('.timeline-item');
+  const wasExpanded = item.classList.contains('expanded');
+
+  // Close all others (and their sub-cards)
+  document.querySelectorAll('.timeline-item.expanded').forEach(el => {
+    if (el !== item) {
+      el.classList.remove('expanded');
+      el.querySelectorAll('.detail-card.card-expanded').forEach(c => c.classList.remove('card-expanded'));
+    }
+  });
+
+  // Toggle current
+  if (wasExpanded) {
+    item.classList.remove('expanded');
+    item.querySelectorAll('.detail-card.card-expanded').forEach(c => c.classList.remove('card-expanded'));
+  } else {
+    item.classList.add('expanded');
+    // Smooth scroll to the item
+    setTimeout(() => {
+      item.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  }
+}
+
+// Scroll-triggered reveal animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.timeline-item').forEach(item => {
+  observer.observe(item);
+});
+
+// Progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = (scrollTop / docHeight) * 100;
+  document.getElementById('progressBar').style.width = progress + '%';
+});
+</script>
+</body>
+</html>
