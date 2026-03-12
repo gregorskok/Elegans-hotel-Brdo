@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponudba — Hotel Elegance Brdo | NevronCore Elegans</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  :root {
+    --navy: #010232;
+    --blue: #1388F9;
+    --blue-light: #A3D1FA;
+    --blue-pale: #E8F4FD;
+    --blue-bg: #F4F9FF;
+    --white: #FFFFFF;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1E293B;
+    --green: #10B981;
+    --green-light: #D1FAE5;
+    --orange: #F59E0B;
+    --orange-light: #FEF3C7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--gray-800);
+    line-height: 1.6;
+    font-size: 14px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  @media print {
+    body { font-size: 12px; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+    section { page-break-inside: avoid; }
+  }
+
+  /* ========== COVER PAGE ========== */
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(160deg, var(--navy) 0%, #0A1628 60%, #0D2847 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(19,136,249,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(19,136,249,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .cover-logo {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 60px;
+  }
+
+  .cover-logo svg {
+    width: 180px;
+    height: auto;
+  }
+
+  .cover-badge {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    background: rgba(19,136,249,0.15);
+    border: 1px solid rgba(19,136,249,0.3);
+    border-radius: 100px;
+    padding: 8px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 32px;
+  }
+
+  .cover h1 {
+    position: relative;
+    z-index: 1;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .cover h1 span {
+    background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cover .subtitle {
+    position: relative;
+    z-index: 1;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gray-400);
+    margin-bottom: 60px;
+    max-width: 500px;
+  }
+
+  .cover-meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 48px;
+    font-size: 13px;
+    color: var(--gray-400);
+  }
+
+  .cover-meta div {
+    text-align: left;
+  }
+
+  .cover-meta label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 4px;
+  }
+
+  .cover-meta span {
+    color: var(--gray-300);
+    font-weight: 400;
+  }
+
+  /* ========== CONTENT PAGES ========== */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -0.3px;
+  }
+
+  .section-intro {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 720px;
+  }
+
+  /* ========== SCOPE SECTION ========== */
+  .scope-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .scope-card {
+    background: var(--blue-bg);
+    border: 1px solid var(--blue-pale);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .scope-card .number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .scope-card .unit {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--blue);
+    margin-bottom: 8px;
+  }
+
+  .scope-card .desc {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  .info-box {
+    background: var(--blue-bg);
+    border-left: 4px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+
+  .info-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .info-box h4 .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .info-box p {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+
+  .warning-box {
+    background: var(--orange-light);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+  }
+
+  .warning-box h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #92400E;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .warning-box p {
+    font-size: 13px;
+    color: #92400E;
+    line-height: 1.7;
+  }
+
+  /* ========== DIVIDER ========== */
+  .divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 50px 0;
+  }
+
+  /* ========== TIMELINE ========== */
+  .timeline-wrapper {
+    position: relative;
+    padding-left: 0;
+  }
+
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .timeline-header .phase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 100px;
+    letter-spacing: 0.5px;
+  }
+
+  .timeline-header .phase-date {
+    font-size: 14px;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 48px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--blue), var(--blue-light), var(--green));
+    border-radius: 3px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -48px;
+    top: 0;
+    width: 33px;
+    height: 33px;
+    background: var(--white);
+    border: 3px solid var(--blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--blue);
+    z-index: 2;
+  }
+
+  .timeline-item:last-child .timeline-dot {
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .timeline-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 16px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+  }
+
+  .timeline-card:hover {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06), 0 12px 28px rgba(0,0,0,0.08);
+  }
+
+  .timeline-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .timeline-card .card-subtitle {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .timeline-card p {
+    font-size: 13px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--gray-50);
+    border-radius: 10px;
+    font-size: 12.5px;
+    color: var(--gray-700);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .feature-item .check {
+    color: var(--blue);
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .integration-list {
+    margin-top: 16px;
+  }
+
+  .integration-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.5;
+  }
+
+  .integration-item:last-child {
+    border-bottom: none;
+  }
+
+  .integration-item .bullet {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+    margin-top: 6px;
+  }
+
+  .integration-item strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  /* ========== TIMELINE END MARKER ========== */
+  .timeline-end {
+    position: relative;
+    padding-left: 48px;
+    margin-top: 32px;
+  }
+
+  .timeline-end::before {
+    content: '';
+    position: absolute;
+    left: 26px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    background: var(--green);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 0 4px var(--green-light);
+  }
+
+  .timeline-end-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* ========== PRICING ========== */
+  .pricing-section {
+    margin-top: 50px;
+  }
+
+  .pilot-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, #0A1628 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pilot-banner::after {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(19,136,249,0.2) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .pilot-banner .pilot-label {
+    display: inline-block;
+    background: rgba(16,185,129,0.15);
+    border: 1px solid rgba(16,185,129,0.3);
+    color: #6EE7B7;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-banner h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pilot-banner p {
+    font-size: 14px;
+    color: var(--gray-400);
+    line-height: 1.7;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+
+  .pricing-table thead th {
+    background: var(--gray-50);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gray-500);
+    padding: 16px 24px;
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .pricing-table thead th:last-child {
+    text-align: right;
+  }
+
+  .pricing-table tbody td {
+    padding: 18px 24px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--gray-100);
+    vertical-align: top;
+  }
+
+  .pricing-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .pricing-table tbody td:last-child {
+    text-align: right;
+    font-weight: 700;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .pricing-table .item-name {
+    font-weight: 600;
+    color: var(--navy);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .pricing-table .item-desc {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  .pricing-table .type-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .badge-monthly {
+    background: var(--blue-pale);
+    color: var(--blue);
+  }
+
+  .badge-once {
+    background: var(--orange-light);
+    color: #92400E;
+  }
+
+  .pricing-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 28px;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 16px;
+    margin-bottom: 16px;
+  }
+
+  .pricing-total .total-label {
+    font-size: 14px;
+    color: var(--gray-600);
+  }
+
+  .pricing-total .total-amount {
+    text-align: right;
+  }
+
+  .pricing-total .total-amount .amount {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .pricing-total .total-amount .period {
+    font-size: 12px;
+    color: var(--gray-500);
+  }
+
+  .pilot-note {
+    background: var(--green-light);
+    border: 1px solid #A7F3D0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+
+  .pilot-note p {
+    font-size: 13px;
+    color: #065F46;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .pilot-note strong {
+    font-weight: 700;
+    color: #064E3B;
+  }
+
+  /* ========== FOOTER ========== */
+  .footer {
+    margin-top: 60px;
+    padding: 40px 0;
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .footer-left {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.8;
+  }
+
+  .footer-left strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .footer-right {
+    text-align: right;
+    font-size: 12px;
+    color: var(--gray-400);
+  }
+
+  .footer-right a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  /* ========== COMPONENTS SECTION ========== */
+  .components-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .component-card {
+    padding: 20px;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    background: var(--white);
+  }
+
+  .component-card h5 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .component-card p {
+    font-size: 11.5px;
+    color: var(--gray-500);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .component-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--blue-pale);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--blue);
+    font-size: 16px;
+  }
+
+  .price-free {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+
+  .price-free .original {
+    text-decoration: line-through;
+    color: #EF4444;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  .price-free .free-badge {
+    background: var(--green-light);
+    color: #065F46;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    border: 1px solid #A7F3D0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== COVER PAGE ==================== -->
+<section class="cover">
+  <div class="cover-logo">
+    <svg viewBox="0 0 960 276.9" xmlns="http://www.w3.org/2000/svg" style="width: 240px; height: auto;">
+      <g><path fill="#FFFFFF" d="M244.3,93.9h30.5V2.1H183v30.5h61.3V93.9z M30.5,185.1H0v91.8h91.8v-30.5H30.5V185.1z M274.8,185.1h-30.5V233 L30.5,2.1H0v91.8h30.5V45.7l213.7,231.1h30.5L274.8,185.1z"/><path fill="#FFFFFF" d="M467.4,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2 c11.2,0,16.1,6,16.1,18.4v54.7h25.4V35.4C498.3,10.9,485.5,0,467.4,0z M557.3,0c-26.7,0-47.2,18.8-47.2,47.7v1.4 c0,29.3,20.2,46.7,47.9,46.7c25.1,0,40.9-11.1,43.9-30.9h-24c-1.6,7.7-7.4,12.8-19.1,12.8c-13.9,0-22.1-8.8-22.8-24h66.2v-7 C602.1,13.9,581,0,557.3,0z M536.3,38.1c1.9-13,9.7-20.5,21.1-20.5c12.1,0,19.1,6.7,20,20.5H536.3z M813.3,0 c-27.5,0-48.4,18.8-48.4,47.6V49c0,28.6,20.9,46.8,48.3,46.8c27.5,0,48.4-18.4,48.4-47.4V47C861.5,18.4,840.8,0,813.3,0z M835.7,48.6c0,17.4-8.2,27.9-22.5,27.9c-14.4,0-22.5-10.5-22.5-28.1V47c0-17.5,8.4-27.7,22.5-27.7c14.2,0,22.5,10.5,22.5,28.1 V48.6z M929.1,0c-15.3,0-25.3,7.5-29.8,16.7V2.1h-25.4v91.8h25.4v-53c0-13.5,8.2-20.2,19.1-20.2c11.2,0,16.1,6,16.1,18.4v54.7H960 V35.4C960,10.9,947.2,0,929.1,0z M730.6,19.7V2.1h-25.4v91.8h25.4v-46c0-17.5,10.9-23.7,29.7-23.5V0.7 C745.4,0.9,736.4,7.4,730.6,19.7z M650.9,67.7L629,2.1h-27.2l33.5,91.8h28.6l33.3-91.8h-24.6L650.9,67.7z"/></g>
+    </svg>
+  </div>
+
+  <div class="cover-badge">Pilotni projekt</div>
+
+  <h1>Ponudba za<br><span>Hotel Elegance Brdo</span></h1>
+
+  <p class="subtitle" style="margin-bottom: 8px;">Projekt NevronCore Elegans</p>
+  <p class="subtitle" style="font-size: 16px; margin-bottom: 60px;">Celovita digitalna platforma za izkušnjo gostov</p>
+
+  <div class="cover-meta">
+    <div>
+      <label>Datum ponudbe</label>
+      <span>12. marec 2026</span>
+    </div>
+    <div>
+      <label>Veljavnost</label>
+      <span>30 dni</span>
+    </div>
+    <div>
+      <label>Pripravil</label>
+      <span>Nevron d.o.o.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SCOPE ==================== -->
+<div class="content page-break">
+
+  <p class="section-label">Obseg projekta</p>
+  <h2 class="section-title">Hotel Elegance Brdo</h2>
+  <p class="section-intro">
+    Na podlagi podatkov o kapaciteti hotela smo pripravili izračun predvidene uporabe platforme NevronCore, ki služi kot osnova za oblikovanje ponudbe.
+  </p>
+
+  <div class="scope-grid">
+    <div class="scope-card">
+      <div class="number">121</div>
+      <div class="unit">sob</div>
+      <div class="desc">Skupna kapaciteta hotela</div>
+    </div>
+    <div class="scope-card">
+      <div class="number">~65%</div>
+      <div class="unit">zasedenost</div>
+      <div class="desc">Povprečna letna zasedenost</div>
+    </div>
+    <div class="scope-card">
+      <div class="number">~70</div>
+      <div class="unit">touchpointov / dan</div>
+      <div class="desc">Do 50 gostov + do 20 obiskovalcev</div>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <h4><span class="icon">?</span> Kaj je guest touchpoint?</h4>
+    <p>
+      Guest touchpoint je <strong>unikatna naprava (mobilni telefon, tablica, prenosnik), ki jo sistem NevronCore zazna v enem dnevu</strong>. Vsak gost ali obiskovalec, ki dostopa do hotelskih digitalnih storitev prek svoje naprave, predstavlja en touchpoint. Ponudba temelji na oceni do <strong>77 touchpointov na dan</strong> (70 + varnostna rezerva), kar upošteva tako nastanjene goste kot dnevne obiskovalce hotela (restavracija, wellness, konference ipd.).
+    </p>
+  </div>
+
+  <div class="warning-box">
+    <h4>&#9888; Spremenljiv obseg in cena</h4>
+    <p>
+      Število touchpointov je ocena na podlagi trenutne zasedenosti. <strong>Dejanska raven se lahko spreminja</strong> — v primeru višje ali nižje zasedenosti se število touchpointov ustrezno prilagodi. <strong>Skladno s spremembo ravni touchpointov se prilagodi tudi mesečna cena</strong> platforme. Cenovni model je v celoti transparenten in se vedno prilagaja dejanski uporabi.
+    </p>
+  </div>
+
+  <!-- ==================== CUSTOM DEVELOPMENT ==================== -->
+  <div style="background: linear-gradient(135deg, var(--navy) 0%, #0A1628 100%); border-radius: 20px; padding: 36px 40px; color: white; margin-bottom: 0; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(19,136,249,0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: relative; z-index: 1;">
+      <div style="display: inline-block; background: rgba(19,136,249,0.15); border: 1px solid rgba(19,136,249,0.3); color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;">Custom razvoj</div>
+      <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 10px;">Prilagoditve po meri za Hotel Elegance Brdo</h3>
+      <p style="font-size: 14px; color: var(--gray-400); line-height: 1.7; max-width: 700px;">
+        To sodelovanje ni zgolj aktivacija standardne platforme. Projekt NevronCore Elegans vključuje <strong style="color: white;">razvoj po meri in prilagoditve, zasnovane posebej za potrebe hotela Elegance Brdo</strong>. Od prilagojene vizualne podobe in uporabniške izkušnje do specifičnih integracij s hotelskimi sistemi — vsak element bo oblikovan v tesnem sodelovanju z ekipo hotela, da platforma v celoti odraža identiteto in operativne potrebe objekta.
+      </p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ==================== TIMELINE ==================== -->
+  <p class="section-label">Implementacijski načrt</p>
+  <h2 class="section-title">Faza 1 — Aktivacija in integracija</h2>
+  <p class="section-intro">
+    Prva faza vključuje vzpostavitev celotne platforme NevronCore, integracijo s hotelskim PMS sistemom Clock, implementacijo digitalnega check-ina ter vzpostavitev samostojne nativne mobilne aplikacije. Vse aktivnosti so načrtovane za dokončanje do 31. maja 2026.
+  </p>
+
+  <div class="timeline-header">
+    <div class="phase-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Faza 1
+    </div>
+    <div class="phase-date">Marec — Maj 2026</div>
+  </div>
+
+  <div class="timeline">
+
+    <!-- STEP 1: NevronCore Activation -->
+    <div class="timeline-item">
+      <div class="timeline-dot">1</div>
+      <div class="timeline-card">
+        <h3>Aktivacija NevronCore projekta Elegans</h3>
+        <p class="card-subtitle">Vzpostavitev platforme in vseh vključenih modulov</p>
+        <p>
+          Ob odločitvi za platformo NevronCore se za Hotel Elegance Brdo aktivira projekt <strong>»Elegans«</strong>. To vključuje celotno postavitev platforme z vsemi temeljnimi moduli za digitalno izkušnjo gostov. Platforma deluje brez namestitve programske opreme — gostje dostopajo prek svojih mobilnih naprav preko spletne aplikacije (web app).
+        </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 24px; font-size: 13px;">Vključeni moduli platforme:</p>
+
+        <div class="feature-grid">
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>Dashboard Composer</strong><br>Prilagodljiva začetna stran za goste</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>Katalogi</strong><br>Digitalni dostop do storitev in izdelkov</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>Room Care</strong><br>Digitalna naročila storitev in inventarja sobe</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>Social Media & Ratings</strong><br>Deljenje izkušenj, ocene</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>Zmogljiv CMS</strong><br>Enostavno upravljanje vsebin</span>
+          </div>
+        </div>
+
+        <p style="margin-top: 20px; font-weight: 600; color: var(--navy); font-size: 13px;">Ključne tehnične komponente:</p>
+        <div class="components-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="component-card">
+            <div class="component-icon">&#9881;</div>
+            <h5>Portal Composer</h5>
+            <p>Enostavno upravljanje in preklop vsebin med napravami in skupinami</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">&#128241;</div>
+            <h5>Web App</h5>
+            <p>Spletna aplikacija brez namestitve — dostopna na vseh napravah prek brskalnika</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- STEP 2: Clock PMS Integration -->
+    <div class="timeline-item">
+      <div class="timeline-dot">2</div>
+      <div class="timeline-card">
+        <h3>Integracija s Clock PMS</h3>
+        <p class="card-subtitle">Povezava platforme NevronCore s hotelskim upravljalnim sistemom</p>
+        <p>
+          Za zagotovitev nemotenega delovanja in sinhronizacije podatkov med NevronCore platformo in obstoječim hotelskim sistemom Clock PMS izvedemo celovito integracijo, ki vključuje:
+        </p>
+
+        <div class="integration-list">
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Sinhronizacija profilov gostov</strong> — avtomatski prenos podatkov o gostih iz PMS v NevronCore za personalizirano izkušnjo (ime, jezik, pretekli obiski, preference)</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Sinhronizacija rezervacij</strong> — realno-časovni prenos podatkov o rezervacijah, datumih bivanja, tipih sob in posebnih zahtevah</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Dvosmerna komunikacija</strong> — spremembe v NevronCore (npr. naročila, zahtevki) se avtomatsko beležijo v PMS za celovit pregled s strani hotelskega osebja</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: Digital Check-in -->
+    <div class="timeline-item">
+      <div class="timeline-dot">3</div>
+      <div class="timeline-card">
+        <h3>Digitalni Check-in</h3>
+        <p class="card-subtitle">Implementacija hitrega check-ina z integracijo v Clock PMS</p>
+        <p>
+          Modul Fast Check-in omogoča gostom, da postopek prijave opravijo <strong>pred prihodom ali ob prihodu prek mobilne naprave</strong>, brez čakanja na recepciji. Postopek je v celoti integriran s Clock PMS:
+        </p>
+
+        <div class="integration-list">
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Registracija pred prihodom</strong> — gostje prejmejo povezavo do digitalnega check-ina pred prihodom (e-mail), kjer izpolnijo osebne podatke in preference</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Avtomatski prenos v PMS</strong> — vsi podatki, ki jih gost izpolni, se avtomatsko prenesejo v Clock PMS, kar zmanjša ročno delo recepcije</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Potrjevanje prihoda</strong> — ob prihodu gost potrdi check-in prek aplikacije, recepcija pa prejme obvestilo in dodeli sobo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: Independent App -->
+    <div class="timeline-item">
+      <div class="timeline-dot">4</div>
+      <div class="timeline-card">
+        <h3>Independent App</h3>
+        <p class="card-subtitle">Samostojna aplikacija z blagovno znamko Hotel Elegance Brdo</p>
+        <p>
+          Poleg spletne aplikacije (web app), ki je vključena v osnovno platformo, se za Hotel Elegance Brdo vzpostavi tudi <strong>samostojna mobilna aplikacija (Independent App)</strong>, objavljena v Apple App Store in Google Play Store pod blagovno znamko hotela. Aplikacija zagotavlja:
+        </p>
+
+        <div class="integration-list">
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Blagovna znamka hotela</strong> — aplikacija je v celoti prilagojena vizualni identiteti Hotel Elegance Brdo (logotip, barve, ikona)</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Objava v App Store & Google Play</strong> — gostje aplikacijo najdejo in prenesejo neposredno iz uradnih trgovin</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Gladka uporabniška izkušnja</strong> — aplikacija omogoča hitrejše delovanje, boljši dostop do funkcij naprave in profesionalen prvi vtis</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Vsi moduli, ki so aktivirani v spletni aplikaciji</strong> — aplikacija vključuje vse iste module kot spletna različica (check-in, katalogi, room care, itd.)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Timeline end marker -->
+  <div class="timeline-end">
+    <div class="timeline-end-text">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+      Zaključek Faze 1 — 31. maj 2026
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ==================== PRICING ==================== -->
+  <div class="pricing-section">
+    <p class="section-label">Cenik</p>
+    <h2 class="section-title">Investicijski okvir</h2>
+
+    <div class="pilot-banner">
+      <div class="pilot-label">&#10024; Pilotni projekt</div>
+      <h3>Prvih 6 mesecev brezplačno</h3>
+      <p>
+        Hotel Elegance Brdo je izbran kot partner za pilotni projekt NevronCore Elegans. Celotna platforma — vključno z vsemi moduli, integracijo in digitalnim check-inom — je <strong>brezplačna prvih 6 mesecev</strong>. Po preteku pilotnega obdobja se hotel odloči za nadaljevanje pod spodaj navedenimi pogoji.
+      </p>
+    </div>
+
+    <p style="font-weight: 600; color: var(--navy); margin-bottom: 16px; font-size: 15px;">Cenik po preteku pilotnega obdobja</p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Postavka</th>
+          <th>Tip</th>
+          <th>Cena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="item-name">NevronCore platforma</span>
+            <span class="item-desc">Osnovna platforma za do 77 touchpointov/dan — vsi moduli vključeni</span>
+          </td>
+          <td><span class="type-badge badge-monthly">Mesečno</span></td>
+          <td>231,00 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">Independent App (Nativna aplikacija)</span>
+            <span class="item-desc">Samostojna nativna mobilna aplikacija (iOS & Android) z blagovno znamko hotela</span>
+          </td>
+          <td><span class="type-badge badge-monthly">Mesečno</span></td>
+          <td>577,50 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">Fast Check-in modul</span>
+            <span class="item-desc">Digitalni check-in z integracijo v PMS</span>
+          </td>
+          <td><span class="type-badge badge-monthly">Mesečno</span></td>
+          <td>115,50 &euro;</td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">Postavitev projekta</span>
+            <span class="item-desc">Enkratna vzpostavitev, konfiguracija in prilagoditev platforme</span>
+          </td>
+          <td><span class="type-badge badge-once">Enkratno</span></td>
+          <td><div class="price-free"><span class="original">431,00 &euro;</span><span class="free-badge">Brezplačno</span></div></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="item-name">Integracija s Clock PMS</span>
+            <span class="item-desc">Celovita integracija — profili gostov, rezervacije</span>
+          </td>
+          <td><span class="type-badge badge-once">Enkratno</span></td>
+          <td><div class="price-free"><span class="original">3.000,00 &euro;</span><span class="free-badge">Brezplačno</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pricing-total">
+      <div class="total-label">
+        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Skupni mesečni strošek</strong>
+        <span style="font-size: 12px; color: var(--gray-500);">Po preteku 6-mesečnega pilotnega obdobja</span>
+      </div>
+      <div class="total-amount">
+        <div class="amount">924,00 &euro;</div>
+        <div class="period">/ mesec</div>
+      </div>
+    </div>
+
+    <div class="pricing-total" style="margin-top: 12px;">
+      <div class="total-label">
+        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Enkratni stroški</strong>
+        <span style="font-size: 12px; color: var(--gray-500);">Postavitev + integracija Clock PMS</span>
+      </div>
+      <div class="total-amount">
+        <div class="amount" style="color: #065F46;">0,00 &euro;</div>
+        <div class="period" style="color: #065F46; font-weight: 600;">brezplačno</div>
+      </div>
+    </div>
+
+    <div class="pilot-note">
+      <p>
+        <strong>Pogoji pilotnega projekta:</strong> Vsi zgoraj navedeni stroški (mesečni in enkratni) so v celoti brezplačni v prvih 6 mesecih od aktivacije. Po preteku tega obdobja se hotel odloči za nadaljevanje sodelovanja. V primeru nadaljevanja začnejo veljati zgoraj navedene cene. Število touchpointov in s tem povezana cena se prilagajata dejanski uporabi.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <div class="footer">
+    <div class="footer-left">
+      <strong>Nevron d.o.o.</strong><br>
+      Ponudba št. NC-ELG-2026-001<br>
+      Datum: 12. marec 2026<br>
+      Veljavnost ponudbe: 30 dni
+    </div>
+    <div class="footer-right">
+      <a href="https://nevron.co">nevron.co</a><br>
+      info@nevron.co
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
