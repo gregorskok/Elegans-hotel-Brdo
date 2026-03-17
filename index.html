@@ -480,6 +480,39 @@
     font-weight: 600;
   }
 
+  /* ========== SERVICES BOX ========== */
+  .services-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+  }
+
+  .service-metric {
+    background: var(--blue-bg);
+    border: 1px solid var(--blue-pale);
+    border-radius: 12px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+
+  .service-metric .metric-value {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .service-metric .metric-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
   /* ========== TIMELINE END MARKER ========== */
   .timeline-end {
     position: relative;
@@ -797,6 +830,85 @@
     border-radius: 100px;
     border: 1px solid #A7F3D0;
   }
+
+  /* ========== STORITVE PO MERI HIGHLIGHT ========== */
+  .services-highlight {
+    background: linear-gradient(135deg, #0A1628 0%, var(--navy) 100%);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .services-highlight .sh-item {
+    text-align: center;
+  }
+
+  .services-highlight .sh-value {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--blue-light);
+    margin-bottom: 2px;
+  }
+
+  .services-highlight .sh-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ========== LICENSE TIMELINE ========== */
+  .license-timeline {
+    display: flex;
+    gap: 0;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--gray-200);
+  }
+
+  .license-phase {
+    flex: 1;
+    padding: 20px 24px;
+    text-align: center;
+    position: relative;
+  }
+
+  .license-phase:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background: var(--gray-200);
+  }
+
+  .license-phase .lp-period {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .license-phase .lp-price {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .license-phase .lp-desc {
+    font-size: 11px;
+    color: var(--gray-500);
+    line-height: 1.4;
+  }
 </style>
 </head>
 <body>
@@ -822,8 +934,8 @@
       <span>12. marec 2026</span>
     </div>
     <div>
-      <label>Veljavnost</label>
-      <span>30 dni</span>
+      <label>Trajanje projekta</label>
+      <span>6 mesecev (april — september 2026)</span>
     </div>
     <div>
       <label>Pripravil</label>
@@ -838,7 +950,7 @@
   <p class="section-label">Obseg projekta</p>
   <h2 class="section-title">Hotel Elegance Brdo</h2>
   <p class="section-intro">
-    Na podlagi podatkov o kapaciteti hotela smo pripravili izračun predvidene uporabe platforme NevronCore, ki služi kot osnova za oblikovanje ponudbe.
+    Na podlagi celovite analize hotela — kapacitet, obstoječe infrastrukture, tehnoloških komponent, operativnih procesov, ponudbe storitev ter potreb in želja ekipe — smo zasnovali projekt digitalne transformacije izkušnje gostov. Ponudba temelji na poznavanju dejanskega stanja in konkretnih ciljev hotela Elegance Brdo.
   </p>
 
   <div class="scope-grid">
@@ -873,14 +985,14 @@
     </p>
   </div>
 
-  <!-- ==================== CUSTOM DEVELOPMENT ==================== -->
+  <!-- ==================== PROJECT APPROACH ==================== -->
   <div style="background: linear-gradient(135deg, var(--navy) 0%, #0A1628 100%); border-radius: 20px; padding: 36px 40px; color: white; margin-bottom: 0; position: relative; overflow: hidden;">
     <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(19,136,249,0.2) 0%, transparent 70%); border-radius: 50%;"></div>
     <div style="position: relative; z-index: 1;">
-      <div style="display: inline-block; background: rgba(19,136,249,0.15); border: 1px solid rgba(19,136,249,0.3); color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;">Custom razvoj</div>
-      <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 10px;">Prilagoditve po meri za Hotel Elegance Brdo</h3>
+      <div style="display: inline-block; background: rgba(19,136,249,0.15); border: 1px solid rgba(19,136,249,0.3); color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 16px;">Projektni pristop</div>
+      <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 10px;">Storitve po meri za Hotel Elegance Brdo</h3>
       <p style="font-size: 14px; color: var(--gray-400); line-height: 1.7; max-width: 700px;">
-        To sodelovanje ni zgolj aktivacija standardne platforme. Projekt NevronCore Elegans vključuje <strong style="color: white;">razvoj po meri in prilagoditve, zasnovane posebej za potrebe hotela Elegance Brdo</strong>. Od prilagojene vizualne podobe in uporabniške izkušnje do specifičnih integracij s hotelskimi sistemi — vsak element bo oblikovan v tesnem sodelovanju z ekipo hotela, da platforma v celoti odraža identiteto in operativne potrebe objekta.
+        To ni zgolj aktivacija standardne platforme. Projekt NevronCore Elegans vključuje <strong style="color: white;">načrtovanje, razvoj po meri, integracijo, konfiguracijo vsebin in testiranje</strong> — vse zasnovano posebej za potrebe hotela Elegance Brdo. Za vsako fazo projekta zagotavljamo <strong style="color: white;">storitve po meri</strong> z jasno opredeljenimi urami, obsegom del in roki za izvedbo. Ekipa Nevron tesno sodeluje z ekipo hotela v vseh fazah implementacije.
       </p>
     </div>
   </div>
@@ -889,41 +1001,41 @@
 
   <!-- ==================== TIMELINE ==================== -->
   <p class="section-label">Implementacijski načrt</p>
-  <h2 class="section-title">Faza 1 — Aktivacija in integracija</h2>
+  <h2 class="section-title">Pilotni projekt — Fazni načrt izvedbe</h2>
   <p class="section-intro">
-    Prva faza vključuje vzpostavitev celotne platforme NevronCore, integracijo s hotelskim PMS sistemom Clock, implementacijo digitalnega check-ina ter vzpostavitev samostojne nativne mobilne aplikacije. Vse aktivnosti so načrtovane za dokončanje do 31. maja 2026.
+    Projekt se izvaja fazno, od aprila do septembra 2026. Platforma NevronCore deluje v oblaku — brez potrebe po lokalni infrastrukturi. Vsaka faza vključuje jasno opredeljene storitve po meri, ki jih izvede ekipa Nevron v sodelovanju z ekipo hotela. Celotno obdobje pilotnega projekta vam ekipa Nevron stoji ob strani — načrtuje, prilagaja, gradi po meri in zagotavlja, da platforma v celoti ustreza vašim potrebam.
   </p>
 
   <div class="timeline-header">
     <div class="phase-badge">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Faza 1
+      Pilotni projekt
     </div>
-    <div class="phase-date">Marec — Maj 2026</div>
+    <div class="phase-date">April — September 2026</div>
   </div>
 
   <div class="timeline">
 
-    <!-- STEP 1: NevronCore Activation -->
+    <!-- STEP 1: Technical Activation -->
     <div class="timeline-item">
       <div class="timeline-dot">1</div>
       <div class="timeline-card">
-        <h3>Aktivacija NevronCore projekta Elegans</h3>
-        <p class="card-subtitle">Vzpostavitev platforme in vseh vključenih modulov</p>
+        <h3>Tehnična aktivacija platforme NevronCore</h3>
+        <p class="card-subtitle">Vzpostavitev infrastrukture, branding in aktivacija modulov</p>
         <p>
-          Ob odločitvi za platformo NevronCore se za Hotel Elegance Brdo aktivira projekt <strong>»Elegans«</strong>. To vključuje celotno postavitev platforme z vsemi temeljnimi moduli za digitalno izkušnjo gostov. Platforma deluje brez namestitve programske opreme — gostje dostopajo prek svojih mobilnih naprav preko spletne aplikacije (web app).
+          V prvem koraku ekipa Nevron izvede <strong>tehnično postavitev platforme NevronCore</strong> za Hotel Elegance Brdo. To vključuje konfiguracijo infrastrukture, vzpostavitev projekta »Elegans«, nastavitev blagovne znamke hotela (barve, logotip, vizualna identiteta) ter aktivacijo vseh predvidenih modulov. V tej fazi ni potrebno aktivno sodelovanje hotela — gre za izključno tehnično delo na strani Nevron.
         </p>
 
-        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 24px; font-size: 13px;">Vključeni moduli platforme:</p>
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 24px; font-size: 13px;">Aktivirani moduli:</p>
 
         <div class="feature-grid">
           <div class="feature-item">
             <span class="check">&#10003;</span>
-            <span><strong>Dashboard Composer</strong><br>Prilagodljiva začetna stran za goste</span>
+            <span><strong>Portal Composer</strong><br>Celotna uporabniška izkušnja in vizualna podoba portala</span>
           </div>
           <div class="feature-item">
             <span class="check">&#10003;</span>
-            <span><strong>Katalogi</strong><br>Digitalni dostop do storitev in izdelkov</span>
+            <span><strong>Raznoliki katalogi</strong><br>Neomejeni katalogi in artikli ter možnost nadgradnje v digitalna naročila in rezervacije</span>
           </div>
           <div class="feature-item">
             <span class="check">&#10003;</span>
@@ -931,111 +1043,350 @@
           </div>
           <div class="feature-item">
             <span class="check">&#10003;</span>
-            <span><strong>Social Media & Ratings</strong><br>Deljenje izkušenj, ocene</span>
+            <span><strong>Social Media</strong><br>Deljenje izkušenj na družbenih omrežjih</span>
           </div>
           <div class="feature-item">
             <span class="check">&#10003;</span>
-            <span><strong>Zmogljiv CMS</strong><br>Enostavno upravljanje vsebin</span>
+            <span><strong>Ratings</strong><br>Sistem ocenjevanja in povratnih informacij gostov</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>Digitalni Check-in</strong><br>Registracija pred prihodom in ob prihodu</span>
+          </div>
+          <div class="feature-item">
+            <span class="check">&#10003;</span>
+            <span><strong>AI Chatbot</strong><br>Inteligentni pogovorni pomočnik za goste</span>
           </div>
         </div>
 
-        <p style="margin-top: 20px; font-weight: 600; color: var(--navy); font-size: 13px;">Ključne tehnične komponente:</p>
-        <div class="components-grid" style="grid-template-columns: 1fr 1fr;">
+        <p style="margin-top: 20px; font-weight: 600; color: var(--navy); font-size: 13px;">Funkcionalnosti platforme:</p>
+        <div class="components-grid" style="grid-template-columns: 1fr 1fr 1fr;">
           <div class="component-card">
             <div class="component-icon">&#9881;</div>
-            <h5>Portal Composer</h5>
-            <p>Enostavno upravljanje in preklop vsebin med napravami in skupinami</p>
+            <h5>UI Composer</h5>
+            <p>Upravljanje vizualne podobe in uporabniške izkušnje celotnega portala</p>
+          </div>
+          <div class="component-card">
+            <div class="component-icon">&#128221;</div>
+            <h5>CMS</h5>
+            <p>Sistem za upravljanje vsebin — temeljna infrastruktura platforme</p>
           </div>
           <div class="component-card">
             <div class="component-icon">&#128241;</div>
             <h5>Web App</h5>
-            <p>Spletna aplikacija brez namestitve — dostopna na vseh napravah prek brskalnika</p>
+            <p>Spletna aplikacija brez namestitve — dostopna prek brskalnika. Z možnostjo nadgradnje v Native app (Nevron ali Independent app)</p>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~40 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">2–3 tedne</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Minimalno</div>
+            <div class="sh-label">Sodelovanje hotela</div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- STEP 2: Clock PMS Integration -->
+    <!-- STEP 2: Digital Check-in -->
     <div class="timeline-item">
       <div class="timeline-dot">2</div>
       <div class="timeline-card">
-        <h3>Integracija s Clock PMS</h3>
-        <p class="card-subtitle">Povezava platforme NevronCore s hotelskim upravljalnim sistemom</p>
+        <h3>Digitalni Check-in</h3>
+        <p class="card-subtitle">Implementacija, integracija s Clock PMS in usklajevanje procesov</p>
         <p>
-          Za zagotovitev nemotenega delovanja in sinhronizacije podatkov med NevronCore platformo in obstoječim hotelskim sistemom Clock PMS izvedemo celovito integracijo, ki vključuje:
+          Osrednja faza projekta je implementacija <strong>digitalnega check-ina</strong> z integracijo v hotelski PMS sistem Clock. Ta korak zahteva tesno sodelovanje med ekipo Nevron in ekipo hotela, saj vključuje <strong>usklajevanje operativnih procesov, konfiguracijo podatkovnih tokov in temeljito testiranje</strong>. Cilj je, da gostje postopek prijave opravijo pred prihodom ali ob prihodu prek mobilne naprave, brez čakanja na recepciji.
         </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 8px; font-size: 13px;">Storitve po meri — obseg del:</p>
 
         <div class="integration-list">
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Sinhronizacija profilov gostov</strong> — avtomatski prenos podatkov o gostih iz PMS v NevronCore za personalizirano izkušnjo (ime, jezik, pretekli obiski, preference)</div>
+            <div><strong>Usklajevanje procesov s hotelom</strong> — definicija celotnega check-in procesa (pred prihodom, ob prihodu, potrjevanje, dodelitev sob) v sodelovanju z recepcijo in vodstvom</div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Sinhronizacija rezervacij</strong> — realno-časovni prenos podatkov o rezervacijah, datumih bivanja, tipih sob in posebnih zahtevah</div>
+            <div><strong>Integracija s Clock PMS</strong> — sinhronizacija profilov gostov, rezervacij in dvosmerna komunikacija med NevronCore in Clock PMS</div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Dvosmerna komunikacija</strong> — spremembe v NevronCore (npr. naročila, zahtevki) se avtomatsko beležijo v PMS za celovit pregled s strani hotelskega osebja</div>
+            <div><strong>Konfiguracija check-in obrazcev</strong> — prilagoditev polj, validacij in uporabniške izkušnje digitalnega check-ina za specifične potrebe hotela</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>E-mail komunikacija</strong> — nastavitev pred-prihodnih e-mail sporočil s povezavo do digitalnega check-ina</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Testiranje in usposabljanje</strong> — celovito testiranje celotnega procesa, usposabljanje osebja recepcije za uporabo sistema</div>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~80 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">4–6 tednov</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Aktivno</div>
+            <div class="sh-label">Sodelovanje hotela</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- STEP 3: Digital Check-in -->
+    <!-- STEP 3: Katalog 1 — Restavracija -->
     <div class="timeline-item">
       <div class="timeline-dot">3</div>
       <div class="timeline-card">
-        <h3>Digitalni Check-in</h3>
-        <p class="card-subtitle">Implementacija hitrega check-ina z integracijo v Clock PMS</p>
+        <h3>Katalog — Restavracija</h3>
+        <p class="card-subtitle">Vzpostavitev digitalnega kataloga restavracije s celotno vsebino</p>
         <p>
-          Modul Fast Check-in omogoča gostom, da postopek prijave opravijo <strong>pred prihodom ali ob prihodu prek mobilne naprave</strong>, brez čakanja na recepciji. Postopek je v celoti integriran s Clock PMS:
+          Prvi katalog za goste, ki vključuje <strong>celotno ponudbo restavracije</strong>. Ekipa Nevron v sodelovanju s hotelom pripravi vsebino, fotografije, opise jedi in pijač, cenik ter pravila naročanja. Vsebina se vnese v CMS, oblikuje vizualno in testira v produkcijskem okolju.
         </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 8px; font-size: 13px;">Storitve po meri — obseg del:</p>
 
         <div class="integration-list">
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Registracija pred prihodom</strong> — gostje prejmejo povezavo do digitalnega check-ina pred prihodom (e-mail), kjer izpolnijo osebne podatke in preference</div>
+            <div><strong>Priprava vsebin</strong> — strukturiranje menija, opis jedi/pijač, kategorije, fotografije, cene</div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Avtomatski prenos v PMS</strong> — vsi podatki, ki jih gost izpolni, se avtomatsko prenesejo v Clock PMS, kar zmanjša ročno delo recepcije</div>
+            <div><strong>Vnos v CMS</strong> — vnos vseh vsebin v platformo, oblikovanje vizualne podobe kataloga</div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Potrjevanje prihoda</strong> — ob prihodu gost potrdi check-in prek aplikacije, recepcija pa prejme obvestilo in dodeli sobo</div>
+            <div><strong>Definicija procesov naročanja</strong> — opredelitev celotnega procesa naročanja, vključno s <strong>spreminjanjem statusov naročila</strong> (novo → potrjeno → v pripravi → dostavljeno), pravila, razpoložljivost, obvestila osebju</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Testiranje</strong> — pregled z ekipo hotela, popravki, končna potrditev za objavo</div>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~35 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">2–3 tedne</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Srednje</div>
+            <div class="sh-label">Sodelovanje hotela</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- STEP 4: Independent App -->
+    <!-- STEP 4: Katalog 2 — Wellness & Spa -->
     <div class="timeline-item">
       <div class="timeline-dot">4</div>
       <div class="timeline-card">
-        <h3>Independent App</h3>
-        <p class="card-subtitle">Samostojna aplikacija z blagovno znamko Hotel Elegance Brdo</p>
+        <h3>Katalog — Wellness & Spa</h3>
+        <p class="card-subtitle">Digitalni katalog wellness storitev in spa ponudbe</p>
         <p>
-          Poleg spletne aplikacije (web app), ki je vključena v osnovno platformo, se za Hotel Elegance Brdo vzpostavi tudi <strong>samostojna mobilna aplikacija (Independent App)</strong>, objavljena v Apple App Store in Google Play Store pod blagovno znamko hotela. Aplikacija zagotavlja:
+          Drugi katalog za goste, ki vključuje <strong>celotno ponudbo wellness centra in spa storitev</strong>. Ekipa Nevron pripravi vsebino, vizualno oblikovanje in konfiguracijo — vključno z opisom storitev, trajanjem, cenami ter morebitnim sistemom rezervacij.
         </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 8px; font-size: 13px;">Storitve po meri — obseg del:</p>
 
         <div class="integration-list">
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Blagovna znamka hotela</strong> — aplikacija je v celoti prilagojena vizualni identiteti Hotel Elegance Brdo (logotip, barve, ikona)</div>
+            <div><strong>Priprava vsebin</strong> — opis wellness storitev, masaže, kopeli, paketi, fotografije, cene</div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Objava v App Store & Google Play</strong> — gostje aplikacijo najdejo in prenesejo neposredno iz uradnih trgovin</div>
+            <div><strong>Vnos v CMS</strong> — vnos vsebin, kategorij in vizualno oblikovanje kataloga</div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Gladka uporabniška izkušnja</strong> — aplikacija omogoča hitrejše delovanje, boljši dostop do funkcij naprave in profesionalen prvi vtis</div>
+            <div><strong>Definicija procesov</strong> — opredelitev procesa rezervacij (če je relevantno), termini, kapacitete, <strong>spreminjanje statusov naročil/rezervacij</strong></div>
           </div>
           <div class="integration-item">
             <div class="bullet"></div>
-            <div><strong>Vsi moduli, ki so aktivirani v spletni aplikaciji</strong> — aplikacija vključuje vse iste module kot spletna različica (check-in, katalogi, room care, itd.)</div>
+            <div><strong>Testiranje</strong> — pregled z ekipo hotela, popravki, končna potrditev za objavo</div>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~30 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">2–3 tedne</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Srednje</div>
+            <div class="sh-label">Sodelovanje hotela</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: Katalog 3 — Aktivnosti & Doživetja -->
+    <div class="timeline-item">
+      <div class="timeline-dot">5</div>
+      <div class="timeline-card">
+        <h3>Katalog — Aktivnosti & Doživetja</h3>
+        <p class="card-subtitle">Digitalni katalog hotelskih aktivnosti, izletov in doživetij</p>
+        <p>
+          Tretji katalog za goste z <strong>aktivnostmi, izleti in doživetji</strong>, ki jih hotel ponuja ali organizira. Vključuje opis aktivnosti, fotografije, termine, cene ter morebitno povezavo z zunanjimi ponudniki.
+        </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 8px; font-size: 13px;">Storitve po meri — obseg del:</p>
+
+        <div class="integration-list">
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Priprava vsebin</strong> — opis aktivnosti, izletov, doživetij, fotografije, termini, cene</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Vnos v CMS</strong> — vnos vsebin, kategorij in vizualno oblikovanje kataloga</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Definicija procesov</strong> — opredelitev procesa rezervacij, naročil, komunikacije z zunanjimi ponudniki</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Testiranje</strong> — pregled z ekipo hotela, popravki, končna potrditev za objavo</div>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~30 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">2–3 tedne</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Srednje</div>
+            <div class="sh-label">Sodelovanje hotela</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 6: AI Chatbot & Content Preparation -->
+    <div class="timeline-item">
+      <div class="timeline-dot">6</div>
+      <div class="timeline-card">
+        <h3>AI Chatbot & Priprava vsebin</h3>
+        <p class="card-subtitle">Aktivacija inteligentnega pogovornega pomočnika in priprava vsebin za AI</p>
+        <p>
+          Pred uporabo AI chatbota je ključno, da so <strong>vse informacije o hotelu točne, strukturirane in konsistentne</strong>. To je temelj za kakovostno AI iskanje, komunikacijo z gosti in avtomatizirano podporo. Ekipa Nevron izvede celovit pregled vsebin in pripravi strukturiran nabor podatkov (»source of truth«), ki ga AI chatbot uporablja za odgovore gostom.
+        </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 8px; font-size: 13px;">Storitve po meri — obseg del:</p>
+
+        <div class="integration-list">
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Pregled in revizija vsebin</strong> — audit vseh guest-facing vsebin (spletna stran, katalogi, OTA profili, PDF-ji) za zagotovitev konsistentnosti</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Source-of-truth factsheet</strong> — priprava strukturiranega nabora podatkov (sobe, storitve, cene, pravila, pogoji, dostopnost) po standardiziranih strukturah</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Q&A baza za chatbota</strong> — priprava odgovorov na najpogostejša vprašanja gostov, usklajenih s politikami in cenami hotela</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Konfiguracija AI chatbota</strong> — nastavitev tona komunikacije, obsega znanja, eskalacijskih pravil in testiranje pogovorov</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Testiranje in optimizacija</strong> — testiranje z realnimi scenariji, optimizacija odgovorov, potrditev z ekipo hotela</div>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~50 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">3–4 tedne</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Aktivno</div>
+            <div class="sh-label">Sodelovanje hotela</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7: Digital Key Integration -->
+    <div class="timeline-item" style="margin-bottom: 0;">
+      <div class="timeline-dot" style="border-color: var(--green); color: var(--green);">7</div>
+      <div class="timeline-card">
+        <h3>Integracija z digitalnim ključem</h3>
+        <p class="card-subtitle">Povezava platforme s sistemom digitalnih ključavnic za sobe</p>
+        <p>
+          Integracija platforme NevronCore z obstoječim ali novim sistemom <strong>digitalnih ključavnic</strong> omogoča gostom, da svojo mobilno napravo uporabijo kot ključ sobe. Ta funkcionalnost je ključna za celostno digitalno izkušnjo in zahteva podporo v <strong>nativni mobilni aplikaciji (Independent App)</strong>.
+        </p>
+
+        <p style="font-weight:600; color: var(--navy); margin-bottom: 12px; margin-top: 8px; font-size: 13px;">Storitve po meri — obseg del:</p>
+
+        <div class="integration-list">
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Analiza obstoječega sistema ključavnic</strong> — pregled tehnične dokumentacije, API zmogljivosti, kompatibilnost</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Integracija s platformo</strong> — razvoj povezave med NevronCore in sistemom ključavnic, vključno z dodeljevanjem ključev ob check-inu</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Podpora v nativni aplikaciji</strong> — implementacija funkcionalnosti digitalnega ključa v Independent App (BLE / NFC komunikacija)</div>
+          </div>
+          <div class="integration-item">
+            <div class="bullet"></div>
+            <div><strong>Testiranje</strong> — celovito testiranje na fizičnih ključavnicah, različnih napravah, varnostni pregled</div>
+          </div>
+        </div>
+
+        <div class="services-highlight">
+          <div class="sh-item">
+            <div class="sh-value">~45 ur</div>
+            <div class="sh-label">Storitve po meri</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">3–4 tedne</div>
+            <div class="sh-label">Predviden rok</div>
+          </div>
+          <div class="sh-item">
+            <div class="sh-value">Aktivno</div>
+            <div class="sh-label">Sodelovanje hotela</div>
           </div>
         </div>
       </div>
@@ -1047,33 +1398,203 @@
   <div class="timeline-end">
     <div class="timeline-end-text">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-      Zaključek Faze 1 — 31. maj 2026
+      Zaključek pilotnega projekta — September 2026
     </div>
+  </div>
+
+  <!-- ==================== STORITVE PO MERI PRICING ==================== -->
+  <div class="divider"></div>
+
+  <p class="section-label">Ponudba A — Storitve po meri</p>
+  <h2 class="section-title">Celovit paket storitev za pilotni projekt</h2>
+  <p class="section-intro">
+    Celoten pilotni projekt vključuje načrtovanje, razvoj, integracijo, konfiguracijo vsebin, testiranje in stalno podporo — izvedeno s strani ekipe Nevron v tesnem sodelovanju z ekipo hotela. Skozi celotno 6-mesečno obdobje vam stojimo ob strani, izpolnjujemo posebne želje, prilagajamo platformo in gradimo rešitve po meri.
+  </p>
+
+  <table class="pricing-table">
+    <thead>
+      <tr>
+        <th>Faza</th>
+        <th>Ure</th>
+        <th>Rok</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <span class="item-name">1. Tehnična aktivacija platforme</span>
+          <span class="item-desc">Infrastruktura, branding, aktivacija modulov</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~40 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">2–3 tedne</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="item-name">2. Digitalni Check-in</span>
+          <span class="item-desc">Procesi, Clock PMS integracija, testiranje, usposabljanje</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~80 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">4–6 tednov</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="item-name">3. Katalog — Restavracija</span>
+          <span class="item-desc">Vsebine, CMS, procesi naročanja, statusne spremembe</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~35 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">2–3 tedne</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="item-name">4. Katalog — Wellness & Spa</span>
+          <span class="item-desc">Vsebine, CMS, procesi rezervacij, testiranje</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~30 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">2–3 tedne</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="item-name">5. Katalog — Aktivnosti & Doživetja</span>
+          <span class="item-desc">Vsebine, CMS, procesi, testiranje</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~30 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">2–3 tedne</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="item-name">6. AI Chatbot & Priprava vsebin</span>
+          <span class="item-desc">Revizija vsebin, Q&A baza, konfiguracija chatbota</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~50 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">3–4 tedne</td>
+      </tr>
+      <tr>
+        <td>
+          <span class="item-name">7. Integracija z digitalnim ključem</span>
+          <span class="item-desc">Analiza, integracija, podpora v nativni aplikaciji</span>
+        </td>
+        <td style="font-weight: 700; color: var(--navy);">~45 ur</td>
+        <td style="font-weight: 500; color: var(--gray-600);">3–4 tedne</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pricing-total">
+    <div class="total-label">
+      <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Implementacijske storitve (koraki 1–7)</strong>
+      <span style="font-size: 12px; color: var(--gray-500);">Načrtovanje, razvoj, integracija, konfiguracija, testiranje</span>
+    </div>
+    <div class="total-amount">
+      <div class="amount">~310 ur</div>
+      <div class="period">projektne storitve</div>
+    </div>
+  </div>
+
+  <!-- Monthly support availability -->
+  <div style="background: var(--blue-bg); border: 1px solid var(--blue-pale); border-radius: 16px; padding: 28px 32px; margin-top: 16px; margin-bottom: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Mesečna razpoložljivost & podpora</strong>
+        <span style="font-size: 13px; color: var(--gray-600); line-height: 1.7;">
+          Poleg projektnih faz ekipa Nevron zagotavlja <strong>stalno mesečno razpoložljivost</strong> skozi celotno 6-mesečno obdobje pilotnega projekta. To vključuje prilagoditve po meri, odzivanje na posebne želje, sprotne optimizacije, sestanke in svetovanje.
+        </span>
+      </div>
+    </div>
+    <div class="services-highlight" style="margin-top: 16px;">
+      <div class="sh-item">
+        <div class="sh-value">~20 ur / mesec</div>
+        <div class="sh-label">Razpoložljivost</div>
+      </div>
+      <div class="sh-item">
+        <div class="sh-value">~120 ur</div>
+        <div class="sh-label">Skupno (6 mesecev)</div>
+      </div>
+      <div class="sh-item">
+        <div class="sh-value">Stalno</div>
+        <div class="sh-label">Ves čas ob strani</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grand total -->
+  <div style="background: linear-gradient(135deg, var(--navy) 0%, #0A1628 100%); border-radius: 20px; padding: 32px 36px; color: white; margin-top: 24px; margin-bottom: 16px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(19,136,249,0.2) 0%, transparent 70%); border-radius: 50%;"></div>
+    <div style="position: relative; z-index: 1;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <div>
+          <strong style="font-size: 16px;">Skupna vrednost storitve po meri</strong><br>
+          <span style="font-size: 13px; color: var(--gray-400);">Implementacija (~310 ur) + mesečna podpora (~120 ur) = ~430 ur</span>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 28px; font-weight: 800; color: var(--blue-light);">14.900,00 &euro;</div>
+          <div style="font-size: 12px; color: var(--gray-400);">standardna vrednost</div>
+        </div>
+      </div>
+      <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0;"></div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <div style="display: inline-block; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); color: #6EE7B7; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; margin-bottom: 8px;">Pilotni popust — 70%</div><br>
+          <strong style="font-size: 14px;">Cena za Hotel Elegance Brdo</strong>
+        </div>
+        <div style="text-align: right;">
+          <div style="font-size: 36px; font-weight: 800;">4.470,00 &euro;</div>
+          <div style="font-size: 12px; color: var(--gray-400);">za celoten pilotni projekt (6 mesecev)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pilot-note" style="margin-bottom: 0;">
+    <p>
+      <strong>Kaj je vključeno:</strong> Celotna izvedba vseh 7 korakov, integracija s Clock PMS, integracija z digitalnim ključem, priprava AI chatbot vsebin, konfiguracija vseh katalogov, stalna mesečna razpoložljivost (~20 ur/mesec), prilagoditve po meri, sestanki in svetovanje. Ekipa Nevron vam celotno obdobje stoji ob strani in skrbi za uspešno uvedbo platforme.
+    </p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- ==================== PRICING ==================== -->
+  <!-- ==================== LICENSING ==================== -->
   <div class="pricing-section">
-    <p class="section-label">Cenik</p>
-    <h2 class="section-title">Investicijski okvir</h2>
+    <p class="section-label">Ponudba B — Licenciranje platforme</p>
+    <h2 class="section-title">Pogoji licenciranja NevronCore</h2>
+    <p class="section-intro">
+      Licenciranje platforme NevronCore sledi projektnemu pristopu. Licence se aktivirajo šele po uspešni vzpostavitvi posamezne funkcionalnosti in veljajo pod ugodnimi pogoji pilotnega projekta.
+    </p>
 
     <div class="pilot-banner">
       <div class="pilot-label">&#10024; Pilotni projekt</div>
-      <h3>Prvih 6 mesecev brezplačno</h3>
+      <h3>Progresivni licenčni model</h3>
       <p>
-        Hotel Elegance Brdo je izbran kot partner za pilotni projekt NevronCore Elegans. Celotna platforma — vključno z vsemi moduli, integracijo in digitalnim check-inom — je <strong>brezplačna prvih 6 mesecev</strong>. Po preteku pilotnega obdobja se hotel odloči za nadaljevanje pod spodaj navedenimi pogoji.
+        Hotel Elegance Brdo je izbran kot partner za pilotni projekt NevronCore Elegans. Licenciranje sledi uspešni implementaciji posamezne funkcionalnosti — <strong>6 mesecev brezplačno po uvedbi</strong>, nato 50% popust za prvo leto.
       </p>
     </div>
 
-    <p style="font-weight: 600; color: var(--navy); margin-bottom: 16px; font-size: 15px;">Cenik po preteku pilotnega obdobja</p>
+    <!-- License timeline visual -->
+    <div class="license-timeline">
+      <div class="license-phase" style="background: var(--green-light);">
+        <div class="lp-period" style="color: #065F46;">Prvih 6 mesecev</div>
+        <div class="lp-price" style="color: #065F46;">Brezplačno</div>
+        <div class="lp-desc" style="color: #065F46;">Po uvedbi funkcionalnosti</div>
+      </div>
+      <div class="license-phase" style="background: var(--blue-bg);">
+        <div class="lp-period" style="color: var(--blue);">Naslednjih 12 mesecev</div>
+        <div class="lp-price">50% popust</div>
+        <div class="lp-desc">Na standardne mesečne cene</div>
+      </div>
+      <div class="license-phase" style="background: var(--gray-50);">
+        <div class="lp-period" style="color: var(--gray-500);">Nato</div>
+        <div class="lp-price">Standardna cena</div>
+        <div class="lp-desc">Po veljavnem ceniku</div>
+      </div>
+    </div>
+
+    <p style="font-weight: 600; color: var(--navy); margin-bottom: 16px; font-size: 15px;">Standardni mesečni cenik platforme</p>
 
     <table class="pricing-table">
       <thead>
         <tr>
           <th>Postavka</th>
           <th>Tip</th>
-          <th>Cena</th>
+          <th>Standardna cena</th>
         </tr>
       </thead>
       <tbody>
@@ -1087,64 +1608,102 @@
         </tr>
         <tr>
           <td>
-            <span class="item-name">Independent App (Nativna aplikacija)</span>
-            <span class="item-desc">Samostojna nativna mobilna aplikacija (iOS & Android) z blagovno znamko hotela</span>
-          </td>
-          <td><span class="type-badge badge-monthly">Mesečno</span></td>
-          <td>577,50 &euro;</td>
-        </tr>
-        <tr>
-          <td>
-            <span class="item-name">Fast Check-in modul</span>
-            <span class="item-desc">Digitalni check-in z integracijo v PMS</span>
+            <span class="item-name">Digitalni Check-in</span>
+            <span class="item-desc">Modul digitalnega check-ina z integracijo v PMS</span>
           </td>
           <td><span class="type-badge badge-monthly">Mesečno</span></td>
           <td>115,50 &euro;</td>
         </tr>
-        <tr>
-          <td>
-            <span class="item-name">Postavitev projekta</span>
-            <span class="item-desc">Enkratna vzpostavitev, konfiguracija in prilagoditev platforme</span>
-          </td>
-          <td><span class="type-badge badge-once">Enkratno</span></td>
-          <td><div class="price-free"><span class="original">431,00 &euro;</span><span class="free-badge">Brezplačno</span></div></td>
-        </tr>
-        <tr>
-          <td>
-            <span class="item-name">Integracija s Clock PMS</span>
-            <span class="item-desc">Celovita integracija — profili gostov, rezervacije</span>
-          </td>
-          <td><span class="type-badge badge-once">Enkratno</span></td>
-          <td><div class="price-free"><span class="original">3.000,00 &euro;</span><span class="free-badge">Brezplačno</span></div></td>
-        </tr>
+        <!-- Postavitev projekta in Integracija s Clock PMS sta vključeni v storitve po meri (Ponudba A) -->
       </tbody>
     </table>
 
     <div class="pricing-total">
       <div class="total-label">
-        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Skupni mesečni strošek</strong>
-        <span style="font-size: 12px; color: var(--gray-500);">Po preteku 6-mesečnega pilotnega obdobja</span>
+        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Skupni mesečni strošek (standardno)</strong>
+        <span style="font-size: 12px; color: var(--gray-500);">Pred uveljavitvijo pilotnih popustov</span>
       </div>
       <div class="total-amount">
-        <div class="amount">924,00 &euro;</div>
+        <div class="amount">346,50 &euro;</div>
         <div class="period">/ mesec</div>
       </div>
     </div>
 
-    <div class="pricing-total" style="margin-top: 12px;">
+    <div class="pricing-total" style="margin-top: 12px; background: var(--blue-bg); border-color: var(--blue-pale);">
       <div class="total-label">
-        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">Enkratni stroški</strong>
-        <span style="font-size: 12px; color: var(--gray-500);">Postavitev + integracija Clock PMS</span>
+        <strong style="display:block; color: var(--navy); font-size: 14px; margin-bottom: 4px;">S 50% popustom (po brezplačnem obdobju)</strong>
+        <span style="font-size: 12px; color: var(--gray-500);">Velja 12 mesecev po preteku brezplačnega obdobja</span>
       </div>
       <div class="total-amount">
-        <div class="amount" style="color: #065F46;">0,00 &euro;</div>
-        <div class="period" style="color: #065F46; font-weight: 600;">brezplačno</div>
+        <div class="amount" style="color: var(--blue);">173,25 &euro;</div>
+        <div class="period">/ mesec</div>
       </div>
     </div>
 
     <div class="pilot-note">
       <p>
-        <strong>Pogoji pilotnega projekta:</strong> Vsi zgoraj navedeni stroški (mesečni in enkratni) so v celoti brezplačni v prvih 6 mesecih od aktivacije. Po preteku tega obdobja se hotel odloči za nadaljevanje sodelovanja. V primeru nadaljevanja začnejo veljati zgoraj navedene cene. Število touchpointov in s tem povezana cena se prilagajata dejanski uporabi.
+        <strong>Pogoji pilotnega projekta:</strong> Vse licence so brezplačne prvih 6 mesecev od uvedbe posamezne funkcionalnosti. Nato velja 50% popust na mesečne licence za 12 mesecev. Postavitev projekta in integracija s Clock PMS sta vključeni v storitve po meri (Ponudba A). Število touchpointov in cena se prilagajata dejanski uporabi.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ==================== INDEPENDENT APP OFFER ==================== -->
+  <div class="pricing-section">
+    <p class="section-label">Ponudba C — Independent App</p>
+    <h2 class="section-title">Samostojna mobilna aplikacija</h2>
+    <p class="section-intro">
+      Po uspešni vzpostavitvi platforme NevronCore se za Hotel Elegance Brdo pripravi tudi <strong>samostojna mobilna aplikacija (Independent App)</strong>, objavljena v Apple App Store in Google Play Store pod blagovno znamko hotela. Nativna aplikacija je ključna za funkcionalnost <strong>digitalnega ključa</strong> (BLE/NFC komunikacija s ključavnicami).
+    </p>
+
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Postavka</th>
+          <th>Tip</th>
+          <th>Standardna cena</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="item-name">Independent App</span>
+            <span class="item-desc">Samostojna mobilna aplikacija (iOS & Android) z blagovno znamko hotela, vključno s podporo za digitalni ključ</span>
+          </td>
+          <td><span class="type-badge badge-monthly">Mesečno</span></td>
+          <td>577,50 &euro;</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="integration-list" style="border: 1px solid var(--gray-200); border-radius: 12px; padding: 16px 20px; margin-bottom: 20px;">
+      <div class="integration-item">
+        <div class="bullet"></div>
+        <div><strong>Blagovna znamka hotela</strong> — prilagoditev vizualne identitete (logotip, barve, ikona)</div>
+      </div>
+      <div class="integration-item">
+        <div class="bullet"></div>
+        <div><strong>Objava v App Store & Google Play</strong> — priprava in objava v uradnih trgovinah</div>
+      </div>
+      <div class="integration-item">
+        <div class="bullet"></div>
+        <div><strong>Vsi moduli platforme</strong> — vsi moduli, aktivirani v spletni aplikaciji, vključno s check-inom in katalogi</div>
+      </div>
+      <div class="integration-item">
+        <div class="bullet"></div>
+        <div><strong>Digitalni ključ</strong> — podpora za BLE/NFC komunikacijo s sistemom ključavnic sobe</div>
+      </div>
+      <div class="integration-item" style="border-bottom: none;">
+        <div class="bullet"></div>
+        <div><strong>Push obvestila</strong> — obveščanje gostov o statusih naročil, check-in opomniki, posebne ponudbe</div>
+      </div>
+    </div>
+
+    <div class="pilot-note">
+      <p>
+        <strong>Opomba:</strong> Independent App je na voljo kot ločena ponudba in se aktivira po uspešni implementaciji osnovne platforme. Za funkcionalnost digitalnega ključa je nativna aplikacija obvezna. Zanjo veljajo enaki pogoji licenciranja kot za osnovno platformo (6 mesecev brezplačno po uvedbi, nato 50% popust za 12 mesecev).
       </p>
     </div>
 
